@@ -4,6 +4,9 @@
 What is my question or goal? State clearly. Do not have a theme. Have a question and hypothesis.
 * [background on study](https://www.cms.gov/Medicare/Medicare-Fee-for-Service-Payment/AcuteInpatientPPS/Readmissions-Reduction-Program)
 
+* [Introduction to readmission](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3983725/)
+
+
 
 ## The Data
 Describe the features (columns) in the data, walk through exemplary features and rows, show appropriate tables/screenshots. Talk about missing data. 
