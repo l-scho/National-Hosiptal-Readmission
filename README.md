@@ -1,12 +1,15 @@
 # National Hosiptal Readmission
 
+![John's Hopkins Hospital](images/johns-hopkins-hospital.jpg)
+
+
 ## Background & Motivation
 
 Medicare implemented the Hopital Readmissions Reduction Program (HRRP) which is a program that encourages hospitals to improve communication and care requirements to assist patients and caregivers in rehabilitation after being discharged, or realeased from the hospital. The 21st Century Cures Act directs the Centers for Medicare & Medicaid Services (CMS) to evaluate a hospital's readmission rate compared to hospitals with a similar proportion of patients eligible for Medicare and Medicaid benefits. 
 
 There are six conditions/procedure-specific 30-day risk-standardized unplanned readmission measures in the program:
 * Acute myocardial infarction (AMI)
-* Chronic ovstructive pulmonary disease (COPD)
+* Chronic obstructive pulmonary disease (COPD)
 * Heart failure (HF)
 * Pneumonia
 * Coronary artery bypass graft (CABG) surgery
@@ -25,20 +28,48 @@ While looking at the data, I noticed that there were several missing rows for nu
 
 ## Exploratory Data Analysis
 
-My first questions when looking at this data was how readmission varied between the six conditions.
+My first questions when looking at this data was how readmission varied between the six conditions. To answer this I plotted the total number of readmissions over the number of discharges for each different condition. The results, shown below indicate that heart failure and chronic obstructive pulmonary disease have the highest readmission numbers compared to discharges. This indicates that perhaps there is room for improvement in the assistence for patients and caregivers being discharged for either of these two conditions. 
+![Readmission for varying measures](images/readmission-for-varying-measures.png)
 
+My second question was how readmission rate for coastal hospitals compared to non-coastal hospitals. There is a clear difference between the two, showing a significantly higher readmission rate for coastal hospitals. 
 
-My second question was how actual discharge rate compared to expected discharge rate between hospitals.
+![Readmission for coastal v non-coastal](images/readmission-for-coast_v_noncoast.png)
 
 The third and final exploratory question was how different states varied in readmission rate. 
 
 
 ## Hypothesis
-Clearly explain hypothesis testing. Make sure it is suited for the problem. Explain approach/method and thoroughly explain and walk through the hypothesis test.
+
+This is a very large dataset with several hospitals in each state. There are many factors that may contribute to being readmitted to a hospital, and I wanted to know if those factors were influenced by being a hospital on the coast. I believe that population density is highest on the coasts, and in additon, many well-known universities, particularly for higher education in the medical field tend to be closer to the coasts. Based on this belief, I hypothesized that coastal hospitals would see a lower readmission rate. I suspected that many graduates of medical school would choose to remain located closer to where they graduated and therefore you would see more competition and better doctors on the coast, leading to a lower readmission rate. 
+
+In order to test my hypothesis I set up a Bayesian A/B test, testing coastal versus non-coastal states. I defined my coastal states as any state with land touching the ocean, which led me to a list of 19 states. Variation A was coastal states, and variation B was non-coastal states. The first step was to come up with my priors, which I defined as P(VarA) = 1 and P(VarB) = 1. I then calculated my posterior parameters, and plotted my beta distribution. The final plot can be seen below, indicating that my hypothesis was incorrect, and that variation b - non-coastal states had a higher probability of 
+
+![Readmission for Total](images/prob-readmission.png)
+
+AMI (Heart Attack)
+![Readmission for AMI](images/prob-ami-readmission.png)
+
+COPD
+![Readmission for COPD](images/prob-copd-readmission.png)
+
+CABG
+![Readmission for CABG](images/prob-cabg-readmission.png)
+
+HF
+![Readmission for HF](images/prob-hf-readmission.png)
+
+HIP/KNEE
+![Readmission for Hip/Knee](images/prob-hipknee-readmission.png)
+
+PN
+![Readmission for PN](images/prob-pn-readmission.png)
+
+
 
 ## Conclusion
 
 ## Citation
+
 
 
 
