@@ -35,42 +35,45 @@ My second question was how readmission rate for coastal hospitals compared to no
 
 ![Readmission for coastal v non-coastal](images/readmission-for-coast_v_noncoast.png)
 
-The third and final exploratory question was how different states varied in readmission rate. 
 
 
-## Hypothesis
+## Bayesian A/B Test
 
-This is a very large dataset with several hospitals in each state. There are many factors that may contribute to being readmitted to a hospital, and I wanted to know if those factors were influenced by being a hospital on the coast. I believe that population density is highest on the coasts, and in additon, many well-known universities, particularly for higher education in the medical field tend to be closer to the coasts. Based on this belief, I hypothesized that coastal hospitals would see a lower readmission rate. I suspected that many graduates of medical school would choose to remain located closer to where they graduated and therefore you would see more competition and better doctors on the coast, leading to a lower readmission rate. 
+This is a very large dataset with several hospitals in each state. There are many factors that may contribute to being readmitted to a hospital, and I wanted to know if those factors were influenced by being a hospital on the coast. I believe that population density is highest on the coasts, and in additon, many well-known universities, particularly for higher education in the medical field tend to be closer to the coasts. Based on this belief, I hypothesized that coastal hospitals would see a lower probability of readmission rate. I suspected that many graduates of medical school would choose to remain located closer to where they graduated and therefore you would see more competition and better doctors on the coast, leading to a lower readmission rate. 
 
-In order to test my hypothesis I set up a Bayesian A/B test, testing coastal versus non-coastal states. I defined my coastal states as any state with land touching the ocean, which led me to a list of 19 states. Variation A was coastal states, and variation B was non-coastal states. The first step was to come up with my priors, which I defined as P(VarA) = 1 and P(VarB) = 1. I then calculated my posterior parameters, and plotted my beta distribution. The final plot can be seen below, indicating that my hypothesis was incorrect, and that variation b - non-coastal states had a higher probability of 
+In order to test my hypothesis I set up a Bayesian A/B test, testing coastal versus non-coastal states. I defined my coastal states as any state with land touching the ocean, which led me to a list of 19 states. Variation A was coastal states, and variation B was non-coastal states. The first step was to come up with my priors, which I defined as P(VarA) = 1 and P(VarB) = 1. I then calculated my posterior parameters, and plotted my beta distribution. The final plot can be seen below, indicating that my hypothesis was incorrect, and that variation b - non-coastal states had a lower probability of readmission.  
 
 ![Readmission for Total](images/prob-readmission.png)
 
-AMI (Heart Attack)
+After completing the A/B test on the total hospitals for coastal versus non-coastal, I decided I wanted to know if it mattered whether you went to a coastal versus non-coastal hospital depending on what condition you had. So I completed a Bayesian A/B test for each condition, which are plotted below.
+
+The first plot is for the condition AMI (Heart Attack). Similarly to the total of all of the conditions, it suggests that your probability of being readmitted for issues concering a heart attack after being discharged, are lower in non-coastal hospitals. This is true for heart failure and pneumonia as well. Chronic obstructive pulmonary disease, Coronary artery bypass graft surgery, Elective primary total hip arthroplasty and/or total knee arthroplasty each have much more overlapping graphs meaning more uncertainty as to which has a lower probability of readmission. So despite the fact that overall the data suggests that going to a non-coastal hospital may be the better route in decreasing your probability of readmission, depending on what condition you are being discharged for, the decision may change.
+
 ![Readmission for AMI](images/prob-ami-readmission.png)
 
-COPD
+
 ![Readmission for COPD](images/prob-copd-readmission.png)
 
-CABG
+
 ![Readmission for CABG](images/prob-cabg-readmission.png)
 
-HF
+
 ![Readmission for HF](images/prob-hf-readmission.png)
 
-HIP/KNEE
+
 ![Readmission for Hip/Knee](images/prob-hipknee-readmission.png)
 
-PN
+
 ![Readmission for PN](images/prob-pn-readmission.png)
 
 
 
 ## Conclusion
 
-## Citation
+Based on the result of my Bayesian A/B test, and exploratory data, I would suggest that a patient and caregiver be thoughtful about deciding whether their condition has a lower rate of discharge in a coastal or non-coastal region. The consequences of being readmitted can be very severe, so getting the necessary help in transitioning out of the hospital to day to day life, is very important. I think this data would be helpful in making a decision about where to be admitted. 
 
+## Citations
 
+* [Data](https://data.medicare.gov/Hospital-Compare/Hospital-Readmissions-Reduction-Program/9n3s-kdb3?fbclid=IwAR2E669uUTZXvrRhk9qrqs73Rbj1OC6Ex17tzg0XD8OqMixJOas3HudS1nM)
 
-
-General Note: Have good organization, appropriate use of text and illustrations, helpful references, beautiful and well put together graphics.
+* [John's Hopkins Image](https://hub.jhu.edu/2013/07/16/us-news-hospital-rankings/)
