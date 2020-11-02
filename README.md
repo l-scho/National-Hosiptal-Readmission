@@ -33,7 +33,7 @@ While looking at the data, I noticed that there were several missing rows for nu
 My first question when looking at this data was how readmission varied between the six conditions. To answer this I plotted the total number of readmissions over the number of discharges for each different condition. The results, shown below indicate that heart failure and chronic obstructive pulmonary disease have the highest readmission numbers compared to discharges. This indicates that perhaps there is room for improvement in the assistence for patients and caregivers being discharged for either of these two conditions. 
 ![Readmission for varying measures](images/readmission-for-varying-measures.png)
 
-My second question was how readmission rate for coastal hospitals compared to non-coastal hospitals. There is a clear difference between the two, showing a significantly higher readmission rate for coastal hospitals. 
+My second question was how readmission rate for coastal hospitals compared to non-coastal hospitals. There is a slight difference between the two, showing a higher readmission rate for coastal hospitals. 
 
 ![Readmission for coastal v non-coastal](images/readmission-for-coast_v_noncoast.png)
 
